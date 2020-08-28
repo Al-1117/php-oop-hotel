@@ -9,11 +9,11 @@ I dati anche qui non arrivano da db ma da un array. -->
 
   // Includo i files neccessari per l'esecuzione del programma
   require_once(__DIR__ . '/database_stanze.php');
-  require_once(__DIR__ . '/stanza.php');
+  require_once(__DIR__ . '/Room.php');
 
   foreach ( $rooms as $room) {
-    $stanza = new Room($room['id'], $room['room_number']);
+    $stanza = new Room($room['id'], $room['room_number'], $room['floor'], $room['beds']);
 
-    var_dump($stanza);
+    var_dump($stanza->getRoomInfo());
   }
 ?>
